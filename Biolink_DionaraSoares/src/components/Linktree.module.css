@@ -57,7 +57,6 @@ body {
 /* Imagens genéricas */
 .galeria {
   display: none;
-  width: 100%;
 }
 .galeria.visible {
   display: block; /* Torna a galeria visível */
@@ -132,8 +131,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  .galeria .imagem {
-    flex: 1 1 100%;
+  .galeria > .imagem {
+    flex: 1 1 90%;
     margin-bottom: 15px;
+    width: 100%;
+  }
+  .galeria {
+    width: 100%;
   }
 }
