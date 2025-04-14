@@ -132,9 +132,8 @@ body {
 
 @media (max-width: 768px) {
   .galeria > .imagem {
-    flex: 1 1 90%;
     margin-bottom: 15px;
-    width: 100%;
+    max-width: 166px;
   }
   .galeria {
     width: 100%;
