@@ -57,9 +57,11 @@ body {
 .galeria {
   display: none;
   transition: 0.2s ease-in;
+  opacity: 0;
 }
 .galeria.visible {
   display: block;
+  opacity: 1;
 }
 .galeria > h2 {
   margin: 40px 0px 40px 0;

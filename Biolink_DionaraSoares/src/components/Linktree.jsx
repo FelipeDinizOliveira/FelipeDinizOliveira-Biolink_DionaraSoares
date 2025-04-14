@@ -16,7 +16,7 @@ import "./Animacao.css";
 
 export function Biolink() {
   const [mostrarGaleria, setMostrarGaleria] = useState(false);
-  const galeriaRef = useRef(null); // Referência para a galeria
+  const tituloRef = useRef(null);
   useScrollAnimation();
 
   const galeria = [
@@ -25,17 +25,18 @@ export function Biolink() {
     { antes: Antes3, depois: Depois3 },
   ];
 
-  // Função para exibir a galeria e rolar até ela
   const handleMostrarGaleria = (e) => {
     e.preventDefault();
-    setMostrarGaleria(!mostrarGaleria);
+    const novoEstado = !mostrarGaleria;
+    setMostrarGaleria(novoEstado);
 
-    // Se a galeria foi habilitada, rola até ela
-    if (!mostrarGaleria && galeriaRef.current) {
-      galeriaRef.current.scrollIntoView({
-        behavior: "smooth", // Rolagem suave
-        block: "start", // Alinha a galeria ao topo
-      });
+    if (!mostrarGaleria && tituloRef.current) {
+      setTimeout(() => {
+        tituloRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 150); // tempo pequeno pra esperar o render
     }
   };
 
@@ -86,9 +87,9 @@ export function Biolink() {
       {/* Galeria */}
       <div
         className={`${styles.galeria} ${mostrarGaleria ? styles.visible : ""}`}
-        ref={galeriaRef}
       >
-        <h2>Limpeza de Pele</h2>
+        <h2 ref={tituloRef}>Limpeza de Pele</h2>
+
         {galeria.map((img, index) => (
           <div
             className="comparacao scale-animation-2"
