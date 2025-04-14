@@ -67,7 +67,6 @@ body {
 }
 .container img {
   width: 100%;
-  height: fit-content;
   max-width: 300px;
   border-radius: 1rem;
   margin-bottom: 1rem;
@@ -134,6 +133,7 @@ body {
   .galeria > .imagem {
     margin-bottom: 15px;
     max-width: 166px;
+    max-height: 222px;
   }
   .galeria {
     width: 100%;
