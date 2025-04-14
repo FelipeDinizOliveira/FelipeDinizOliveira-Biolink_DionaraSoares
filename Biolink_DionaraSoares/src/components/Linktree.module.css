@@ -57,6 +57,7 @@ body {
 /* Imagens genéricas */
 .galeria {
   display: none;
+  width: 100%;
 }
 .galeria.visible {
   display: block; /* Torna a galeria visível */
@@ -130,9 +131,9 @@ body {
   background-color: rgba(218, 206, 190, 0.632);
 }
 
-/* Responsividade */
-@media (max-width: 480px) {
-  .imgBox {
-    flex-direction: column;
+@media (max-width: 768px) {
+  .galeria .imagem {
+    flex: 1 1 100%;
+    margin-bottom: 15px;
   }
 }
